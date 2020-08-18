@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Hello!</title>
+    <div class="topimg">
+      <img src="https://cdn.glitch.com/e0502230-dddd-467a-97fd-afee8c1549e2%2FActiBridge_Logo.png?v=1593896410502" alt="" />
+    </div>
+    
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/preferences.css">
+    
+    <!-- import the webpage's javascript file -->
+    <script src="/preferences.js" defer></script>
+  </head>  
+  <body>
+    <form action="/preferences.html" method="get">
+      <button onclick ="googleSignIn()">Google SignIn </button>
+    </form>
+        
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase.js"></script>
+    
+    <script>
+    //Initialize Firebase
+    var config = {
+     apiKey: "AIzaSyAHwzjzwPFuj1IqWR_0beEB8ssBvzUdrfA",
+    authDomain: "actibridge-77b52.firebaseapp.com",
+    databaseURL: "https://actibridge-77b52.firebaseio.com",
+    projectId: "actibridge-77b52",
+    storageBucket: "actibridge-77b52.appspot.com",
+    messagingSenderId: "806905396639",
+    appId: "1:806905396639:web:bc51f8506155c0395591aa"
+  };
+   // Initialize Firebase
+   // Initialize Firebase
+    firebase.initializeApp(config);
+      
+      googleSignIn=()=>{
+        var provider = new firebase.auth.GoogleAuthProvider();
+      
+        firebase.auth().signInWithPopup(provider).then(function(result){
+          console.log(result)
+          console.log("Success Google Account Linked")
+         
+        }).catch(function(err){
+          console.log(err)
+            console.log("Failed to do")
+        })
+      }
+    
+    </script>
+    
+  </body>
+</html>

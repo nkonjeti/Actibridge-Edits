@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Resources</title>
+      <div class="topimg">
+      <img src="https://cdn.glitch.com/e0502230-dddd-467a-97fd-afee8c1549e2%2FActiBridge_Logo.png?v=1593896410502" alt="" />
+    </div>
+    <div class="container blue circleBehind">
+      <a href="index.html">HOME</a>
+      <a href="learn.html">LEARN</a>
+      <a href="matchup.html">MATCH UP</a>
+      <a href="outreach.html">OUTREACH</a>
+      <a href="donate.html"> DONATE</a>
+      <a href="preferences.html">PREFERENCES</a>
+      <a href="aboutus.html">ABOUT US</a>
+    </div>
+    
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="outreach.css">
+    <link rel="stylesheet" href="navbarstyle.css">
+      
+
+    
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+    <script src="outreach.js"></script>
+  </head>  
+  <body>
+      <div class="sub_header">
+          <h1 class="main_title"> Contact Your Representative</h1>
+          <h2 class="main_descrip">Want to contact your representative, but aren't sure who they are? We'll find your representative by matching your ZIP code to your district and set you up with an email template.</h2>
+      </div>
+      <div class="zipcode">
+        
+          <form class="zip_form" method="GET" action="mailto:kboyle@pahouse.net	" name="search-theme-form" enctype="text/plain">
+            
+              <div class="enter_value">
+                <label for="zipcode">Enter your zipcode: </label><br>
+                <input id= "zip" type="text" class="zipcode_value" name="zipcode" >
+              </div>
+              
+            <input class="hide" name="subject" value="Requesting&nbsp;Action"/>
+              <textarea class="hide" name="body">To&nbsp;Whom&nbsp;It&nbsp;May&nbsp;Concern,&#013;&#010;&#013;&#010;Hello.&nbsp;I&nbsp;am&nbsp;a&nbsp;resident&nbsp;in&nbsp;your&nbsp;district,&nbsp;and&nbsp;today&nbsp;I&nbsp;am&nbsp;writing&nbsp;regarding&nbsp;the&nbsp;ongoing&nbsp;crises&nbsp;the&nbsp;world&nbsp;is&nbsp;currently&nbsp;facing.&nbsp;I&nbsp;believe&nbsp;that&nbsp;the&nbsp;United&nbsp;States&nbsp;must&nbsp;take&nbsp;action&nbsp;against&nbsp;the&nbsp;racism,&nbsp;sexism,&nbsp;homophobia,&nbsp;and&nbsp;all&nbsp;of&nbsp;the&nbsp;resulting&nbsp;violence&nbsp;and&nbsp;hatred.&#013;&#010;&#013;&#010;As&nbsp;a&nbsp;member&nbsp;of&nbsp;the&nbsp;general,&nbsp;American&nbsp;public,&nbsp;I&nbsp;demand&nbsp;that&nbsp;we&nbsp;end&nbsp;police&nbsp;brutality&nbsp;in&nbsp;America,&nbsp;which&nbsp;has&nbsp;claimed&nbsp;the&nbsp;lives&nbsp;of&nbsp;1310&nbsp;citizens&nbsp;in&nbsp;2019,&nbsp;President&nbsp;Trump's&nbsp;attempts&nbsp;to&nbsp;discriminate&nbsp;trans&nbsp;and&nbsp;LGBTQ+&nbsp;patients,&nbsp;and&nbsp;the&nbsp;general&nbsp;war&nbsp;and&nbsp;hunger&nbsp;in&nbsp;Yemen.&nbsp;It&nbsp;is&nbsp;our&nbsp;moral&nbsp;responsibility,&nbsp;and&nbsp;we&nbsp;demand&nbsp;immediate&nbsp;action.&#013;&#010;&#013;&#010;Sincerely,&#013;&#010;&#013;&#010;[YOUR NAME]</textarea>
+
+              
+                
+              <div>
+                  <input  class="submit_button" type="submit" value="Contact Representative">
+              </div>
+                
+          </form>
+      
+      </div>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase.js"></script>
+    <script>
+       var firebaseConfig = {
+        apiKey: "AIzaSyAHwzjzwPFuj1IqWR_0beEB8ssBvzUdrfA",
+        authDomain: "actibridge-77b52.firebaseapp.com",
+        databaseURL: "https://actibridge-77b52.firebaseio.com",
+        projectId: "actibridge-77b52",
+        storageBucket: "actibridge-77b52.appspot.com",
+        messagingSenderId: "806905396639",
+        appId: "1:806905396639:web:bc51f8506155c0395591aa"
+      };
+    firebase.initializeApp(firebaseConfig); 
+    var user = firebase.auth().currentUser;
+    firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+     email = user.email;
+     console.log(email)
+     var bd = firebase.firestore();
+       var docRef = bd.collection("userInfo").doc(email);
+
+docRef.get().then(function(doc) {
+    if (doc.exists) {
+      var zipcode = doc.data().zipcode 
+      document.getElementById("zip").value = zipcode;
+      
+      
+      
+      
+      
+      
+      
+       } else {
+        // doc.data() will be undefined in this case
+        console.log("No such document!");
+        alert("Take the quiz in preferences!");
+    }
+}).catch(function(error) {
+    console.log("Error getting document:", error);
+});
+
+    
+    
+  
+  } else {
+    console.log('not logged in')
+    
+  }
+});
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </script>
+
+  </body>
+</html>

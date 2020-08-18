@@ -1,0 +1,172 @@
+/* CSS files add styling rules to your content */
+
+.topimg {
+/*   object-fit: cover;
+  display: block;
+  position: static; 
+  top: 00%;
+  left: 50%;
+  transform: translate(10%, -50%);
+  height: 178px; */
+  display: center;
+  text-align: center;
+  margin: 0 auto;
+/*overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-image: url('https://cdn.glitch.com/e0502230-dddd-467a-97fd-afee8c1549e2%2FActiBridge_Logo.png?v=1593896410502'); */
+}
+
+body {
+  font-family: Raleway, arial, sans-serif;
+  margin: 2em;
+/*   background-color: #C1C6DB; */
+  background-image: url('https://cdn.glitch.com/e0502230-dddd-467a-97fd-afee8c1549e2%2F340434.png?v=1593911265740');
+}
+.black {
+  background-color: black;
+  padding: 10%;
+  background-image: url("https://cdn.glitch.com/e0502230-dddd-467a-97fd-afee8c1549e2%2Fblack-bigger.png?v=1593927204472");
+}
+
+.black2{
+  background-color: black;
+  padding: 10%;
+  color: white;
+  background-image: url("https://cdn.glitch.com/e0502230-dddd-467a-97fd-afee8c1549e2%2Falt-black.png?v=1593926255610");
+}
+
+.black3{
+  background-color: black;
+  padding: 10%;
+}
+
+.green {
+  background-color: #2BB39C;
+  padding: 10%;
+  background-image: url("https://cdn.glitch.com/e0502230-dddd-467a-97fd-afee8c1549e2%2Fgreen-photo-bigger.png?v=1593918034089");
+}
+
+.green2 {
+  background-color: #2BB39C;
+  padding: 10%;
+  background-image: url("https://cdn.glitch.com/e0502230-dddd-467a-97fd-afee8c1549e2%2Falt-green.png?v=1593927543640");
+}
+
+.green3 {
+  background-color: #2BB39C;
+  padding: 10%;}
+
+
+
+.darkbrown {
+  background-color: #806D6B;
+  padding: 10%;
+}
+
+.activism {
+  color: white;
+ 
+}
+
+.learn {
+  color: white;
+  
+}
+.lightheading {
+  color: #c1cad9;
+  animation-name: enlarge;
+  animation-duration: 2s;
+  
+  
+}
+
+.blackfont {
+  color: #42413d;
+}
+
+.red {
+  background-color: #A30567;
+  padding: 10%;
+  background-image: url("https://cdn.glitch.com/e0502230-dddd-467a-97fd-afee8c1549e2%2Fpink-bigger.png?v=1593927357363");
+}
+
+.pink {
+  background-color: #FFCFBD;
+  padding: 10%;
+  background-image: url("https://cdn.glitch.com/e0502230-dddd-467a-97fd-afee8c1549e2%2Fpeach-bigger.png?v=1593927356438");
+}
+.orange {
+  background-color: #A36C50;
+  padding: 10%;
+  background-image: url("https://cdn.glitch.com/e0502230-dddd-467a-97fd-afee8c1549e2%2Fbrown-bigger.png?v=1593927271463");
+}
+spacing {
+  display:block;
+  margin-right: auto;
+  margin-left: auto;
+  
+}
+.moveimage{
+  animation-name: slidein;
+  animation-duration: 2s;
+}
+
+@keyframes enlarge{
+  from {
+    font-size: 98%;
+    margin-left: -8%;
+  }
+  to {
+    
+    font-size: 100%;
+    margin-left: 0%;
+  }
+}
+
+
+@keyframes slidein {
+  from {
+    margin-left: -8%;
+
+  }
+
+  to {
+    margin-left: 0%;
+
+  }
+}
+
+.but:hover {
+  letter-spacing: 0.8em;
+  background-color: #F08C99;
+}
+
+button {
+  color: white;
+  height: 4em;
+  width: 30%;
+  padding: 1.5em;
+  
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #B697CC;
+  border: none;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  transition: all 0.2s cubic-bezier(.4,0,.2,1);
+ 
+}
+
+#left:hover {
+  letter-spacing: 0.8em;
+  background-color: #F08C99;
+}
+
+#left{
+  margin-left: 0px;
+  background-color: #806D6B;
+  
+}

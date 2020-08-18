@@ -1,0 +1,35 @@
+topimg {
+/*   object-fit: cover;
+  display: block;
+  position: static; 
+  top: 00%;
+  left: 50%;
+  transform: translate(10%, -50%);
+  height: 178px; */
+  display: center;
+  text-align: center;
+  margin: 0 auto;
+/*overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-image: url('https://cdn.glitch.com/e0502230-dddd-467a-97fd-afee8c1549e2%2FActiBridge_Logo.png?v=1593896410502'); */
+}
+
+h1 {
+  font-family: Raleway, arial, sans-serif;
+  margin: 2em;
+  text-align: center;   
+}
+
+body {
+  font-family: Raleway, arial, sans-serif;
+  margin: 2em;
+  background-image: url('https://cdn.glitch.com/e0502230-dddd-467a-97fd-afee8c1549e2%2F340434.png?v=1593911265740');
+    
+}
+
+.ind {
+  display: center;
+  text-align: center;
+  margin: 0 auto;
+}

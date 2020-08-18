@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+
+    <title>ActiBridge</title>
+     <div class="topimg">
+      <img src="https://cdn.glitch.com/e0502230-dddd-467a-97fd-afee8c1549e2%2FActiBridge_Logo.png?v=1593896410502" alt="" />
+    </div>
+    <!--navbar html-->
+    <div class="container blue circleBehind">
+      <a href="index.html">HOME</a>
+      <a href="learn.html">LEARN</a>
+      <a href="matchup.html">MATCH UP</a>
+      <a href="outreach.html">OUTREACH</a>
+      <a href="donate.html"> DONATE</a>
+      <a href="preferences.html">PREFERENCES</a>
+      <a href="aboutus.html">ABOUT US</a>
+    </div>
+
+    
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/navbarstyle.css" />
+     <link rel="stylesheet" href="/joinbutton.css" />
+    <link rel="stylesheet" href="/quiz.css" />
+    
+    
+  </head>
+  
+  <body>
+    <div class="green2">
+    <h1 style = "text-align: center; display: block; margin-right: auto; margin-left: auto; color:white ">
+      ACTIBRIDGE QUIZ
+    </h1>
+    
+   <form>
+     
+    <div style = "width: 30%;">
+      <input placeholder = "Enter Zipcode" type = "text" name = "zip" id = "userZipCode"/>
+    </div>
+     <div class = "spacing">
+       <h3 style = "color:white;">
+          Check what you are interested in! 
+       </h3>
+       
+         
+       
+       <input type = "checkbox" name = "ar" id = "ar" value = "false"/>
+       <label for="ar" color: white> Animal Rights</label><br>
+       <input type = "checkbox" name = "ct" id = "ct" value = "false"/>
+       <label for="ct" color: white> Child Trafficking</label><br>
+       <input type = "checkbox" name = "di" id = "di" value = "false"/>
+       <label for="di" color: white> Disabilities</label><br>
+       <input type = "checkbox" name = "ha" id = "ha" value = "false"/>
+       <label for="ha" color: white> HIV/AIDS</label><br>
+       <input type = "checkbox" name = "mt" id = "mt" value = "false"/>
+       <label for="mt" color: white> #MeToo</label><br>
+       <input type = "checkbox" name = "bhr" id = "bhr" value = "false" />
+       <label for="bhr" color: white> BokoHaram Refugees</label><br>
+       <input type = "checkbox" name = "cc" id = "cc" value = "false"/>
+       <label for="cc" color: white> Climate Change</label><br>
+       <input type = "checkbox" name = "ed" id = "ed" value = "false"/>
+       <label for="ed" color: white> Education</label><br>
+       <input type = "checkbox" name = "hu" id = "hu" value = "false"/>
+       <label for="hu" color: white> Hurricanes</label><br>
+       <input type = "checkbox" name = "nu" id = "nu" value = "false"/>
+       <label for="nu" color: white> Nutrition</label><br>
+       <input type = "checkbox" name = "blm" id = "blm" value = "false"/>
+       <label for="blm" color: white> Black Lives Matter</label><br>
+       <input type = "checkbox" name = "co" id = "co" value = "false"/>
+       <label for="co" color: white> Coronavirus</label><br>
+       <input type = "checkbox" name = "efg" id = "efg" value = "false"/>
+       <label for="efg" color: white> Equality For Girls</label><br>
+       <input type = "checkbox" name = "im" id = "im" value = "false"/>
+       <label for="im" color: white> Immunizations</label><br>
+       <input type = "checkbox" name = "lr" id = "lr" value = "false"/>
+       <label for="lr" color: white> LGBTQ+Rights</label><br>
+       
+
+          
+      
+       <br>
+       <form action="/preferences.html" method="get">
+           <button class="hello" type="submit">Refresh</button>
+       </form>  
+       
+       </div>
+       
+      </form>
+      </div>
+     <button class="hello" id = "submit" type="submit" >Submit</button>
+    
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase.js"></script>
+    <script>
+       // Your web app's Firebase configuration
+    
+ 
+  var firebaseConfig = {
+   apiKey: "AIzaSyAHwzjzwPFuj1IqWR_0beEB8ssBvzUdrfA",
+    authDomain: "actibridge-77b52.firebaseapp.com",
+    databaseURL: "https://actibridge-77b52.firebaseio.com",
+    projectId: "actibridge-77b52",
+    storageBucket: "actibridge-77b52.appspot.com",
+    messagingSenderId: "806905396639",
+    appId: "1:806905396639:web:bc51f8506155c0395591aa"
+  };
+  firebase.initializeApp(firebaseConfig);
+  
+
+  
+  
+  var firestore = firebase.firestore();
+
+ /* const submitBtn = document.querySelector("#submit");
+  //let userZip= document.querySelector("#userZipCode");
+  //let animal = document.querySelector("ar");
+  //let childt = document.querySelector("ct");
+  let userZip = document.getElementById("userZipCode");
+  let animal = document.getElementById("ar");
+  let childt = document.getElementById("ct"); */
+                                      
+  
+const db = firestore.collection("userInfo");
+ 
+
+document.getElementById("submit").addEventListener("click", function(){
+console.log('clicked');
+ 
+   
+//submitBtn.addEventListener("click", function() {
+let userZip = document.getElementById("userZipCode");
+let animal = document.getElementById("ar");
+let childt = document.getElementById("ct");
+let dissabilities = document.getElementById("di");
+let hiv = document.getElementById("ha");
+let metoo = document.getElementById("mt");
+let boko = document.getElementById("bhr");
+let climate = document.getElementById("cc");
+let edu = document.getElementById("ed");
+let hurr = document.getElementById("hu");
+let nut = document.getElementById("nu");
+let blacklives = document.getElementById("blm");
+let corona = document.getElementById("co");
+let equ = document.getElementById("efg");
+let immu = document.getElementById("im");
+let lg = document.getElementById("lr")
+
+if (userZip.checked == true) {
+  userZip.value = 'true';
+}
+if (animal.checked == true) {
+  animal.value = 'true';
+}
+  if (childt.checked == true) {
+  childt.value = 'true';
+}
+  if (dissabilities.checked == true) {
+  dissabilities.value = 'true';
+}
+   if (hiv.checked == true) {
+  hiv.value = 'true';
+}
+   if (metoo.checked == true) {
+ metoo.value= 'true';
+}
+   if (boko.checked == true) {
+  boko.value = 'true';
+}
+   if (climate.checked == true) {
+ climate.value = 'true';
+}
+   if (edu.checked == true) {
+  edu.value = 'true';
+}
+   if (hurr.checked == true) {
+ hurr.value = 'true';
+}
+   if (nut.checked == true) {
+  nut.value = 'true';
+}
+   if (blacklives.checked == true) {
+ blacklives.value = 'true';
+}
+   if (corona.checked == true) {
+  corona.value = 'true';
+}
+  if (equ.checked == true) {
+  equ.value = 'true';
+}
+   if (immu.checked == true) {
+ immu.value = 'true';
+}
+   if (lg.checked == true) {
+ lg.value = 'true';
+}
+ let userZipInput= userZip.value;
+ let animalInput = animal.value;
+ let childInput = childt.value;
+  let dissabilitiesInput = dissabilities.value;
+  let hivInput = hiv.value;
+  let metooInput = metoo.value;
+  let bokoInput = boko.value;
+  let climateInput = climate.value;
+  let eduInput = edu.value;
+  let hurrInput = hurr.value;
+  let nutInput = nut.value;
+  let blacklivesInput = blacklives.value;
+  let coronaInput = corona.value;
+  let equInput = equ.value;
+  let immuInput = immu.value;
+  let lgInput = lg.value;
+  var email = "not_logged_in";
+  var user = firebase.auth().currentUser;
+  
+  firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+     email = user.email;
+     console.log(email)
+     var bd = firebase.firestore();
+   bd.collection("userInfo").doc(email).delete().then(function() {
+    console.log("Document successfully updated!");
+}).catch(function(error) {
+    console.error("Error removing document: ", error);
+});
+
+    
+    
+    
+    db.doc(email)
+  .set({
+ user: email, 
+ zipcode: userZipInput,
+ animal_rights: animalInput,
+ child_trafficking: childInput,
+ dissabilities: dissabilitiesInput,
+  hiv_aids: hivInput,
+  metoo: metooInput,
+  bokoharam_refugees: bokoInput,
+  climate_change: climateInput,
+  education: eduInput,
+  hurricanes: hurrInput,
+  nutrition: nutInput,
+  blm: blacklivesInput,
+  covid: coronaInput,
+  equality_for_girls: equInput,
+  immunizations: immuInput,
+  lgbtq_rights: lgInput
+})
+.then(function() {
+ console.log("Data Saved");
+  })
+.catch(function(error) {
+ console.log(error);
+});
+  } else {
+    // No user is signed in.
+    alert('Login first to save your preferences!')
+    
+  }
+});
+
+
+
+});
+   </script>
+    
+  </body>
+  
+</html>

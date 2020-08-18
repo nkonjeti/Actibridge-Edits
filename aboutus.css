@@ -1,0 +1,95 @@
+@import 'https://fonts.googleapis.com/css?family=Raleway';
+
+/*
+
+.topimg {
+/*   object-fit: cover;
+  display: block;
+  position: static; 
+  top: 00%;
+  left: 50%;
+  transform: translate(10%, -50%);
+  height: 178px; */
+/*   display: center;
+  text-align: center;
+  margin: 0 auto; */
+/*overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-image: url('https://cdn.glitch.com/e0502230-dddd-467a-97fd-afee8c1549e2%2FActiBridge_Logo.png?v=1593896410502'); */
+
+
+.topimg {
+/*   object-fit: cover;
+  display: block;
+  position: static; 
+  top: 00%;
+  left: 50%;
+  transform: translate(10%, -50%);
+  height: 178px; */
+  display: center;
+  text-align: center;
+  margin: 0 auto;
+/*overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-image: url('https://cdn.glitch.com/e0502230-dddd-467a-97fd-afee8c1549e2%2FActiBridge_Logo.png?v=1593896410502'); */
+}
+
+/*#hellodiv {
+  justify-content: center;
+  justify-content: space-between;
+  text-align: center;
+  margin-top: 65px;
+  margin-bottom: 65px;
+}*/
+
+h2 {
+  color: white;
+  font-family: Raleway, arial, sans-serif;
+  text-align: center;
+}
+
+.cell{
+/*   color: #806D6B; */
+  color: white;
+  font-family: Raleway, arial, sans-serif;
+  text-align: center;
+}
+
+.cell:hover{
+  color: #A30567;
+}
+
+.none{
+  text-decoration: none;
+}
+
+table{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+table td{
+  padding: 25px;
+}
+
+.ourhello {
+  color: black;
+  background-color: #2BB39C;
+  padding: 20%;
+}
+
+.helloimg {
+    width: 223px;
+    height: 223px;
+    object-fit: cover;
+    border-radius: 1000px;
+    border: solid 4px;
+    border-color: #DEEAFF;}
+
+body {
+  background-image: url('https://cdn.glitch.com/e0502230-dddd-467a-97fd-afee8c1549e2%2F340434.png?v=1593911265740');
+}
